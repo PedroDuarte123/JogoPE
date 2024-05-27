@@ -23,6 +23,7 @@ typedef struct _personagem
 	void olhar(int posicao);
 	int imprimir_status(PERSONAGEM jogador);
 	void mover(int posicao, PERSONAGEM *jogador);
+	void criar_personagem();
 	
 	int main()
 		{
@@ -123,7 +124,23 @@ typedef struct _personagem
 		}
 	
 	void menu_inicial()
-		{
+		{	int opcao;
+			printf("\n Bem vindo(a)!!!\n");
+			printf("\n");
+			printf("(1) Iniciar um novo jogo\n");
+			printf("(2) Continuar jogo salvo\n");
+			printf("(3) Listar membros do grupo\n");
+			printf("Digite a opcao:")
+			scanf("%d", &opcao);
+			switch(opcao){
+				case 1: 
+					criar_personagem();
+					break;
+				case 2:
+					printf("Continuando o jogo...")
+				case 3: 
+					printf("Pedro Henrique de Oliveira Duarte");
+			}
 		}
 		
 	int imprimir_status(PERSONAGEM jogador)
@@ -137,3 +154,17 @@ typedef struct _personagem
 		{
 		jogador->posicao = posicao;
 		}
+	void criar_personagem(){
+		printf("Digite o nome do seu personagem:");
+		scanf("%s", jogador.nome);
+		printf("\n Digite a vida máxima do seu personagem:");
+		scanf("%d", jogador.hp);
+		printf("\n Digite o valor de defesa do seu personagem:");
+		scanf("%d", jogador.defesa);
+		printf("\n Digite o valor de ataque do seu personagem:");
+		scanf("%d", jogador.ataque);
+		printf("\n Digite o valor de dano do seu personagem:");
+		scanf("%d", jogador.dano);
+		jogador.posicao = 0;
+		printf("\n Personagem criado com sucesso!\n");
+	}
